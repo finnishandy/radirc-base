@@ -1,5 +1,9 @@
 import { combineReducers } from 'redux';
 import counter from './counter';
+import connection from './connection';
+import ircServerMessages from './irc-server-messages';
+import privMessages from './priv-messages';
+
 
 /**
  * combineReducers is important to understand. As your app might grow in size
@@ -16,6 +20,9 @@ import counter from './counter';
  */
 const rootReducer = combineReducers({
   counter, // you might be used to: counter: counter,
+  connection,
+  ircServerMessages,
+  privMessages
 });
 
 export default rootReducer;

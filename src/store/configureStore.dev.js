@@ -3,7 +3,8 @@ import rootReducer from '../reducers';
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 import DevTools from '../containers/DevTools';
-import ircMiddleware from '../middleware/ws-middleware';
+import wsMiddleware from '../middleware/ws-middleware';
+import ircMiddleware from '../middleware/irc-middleware';
 
 /**
  * Entirely optional, this tiny library adds some functionality to
@@ -15,7 +16,7 @@ const logger = createLogger();
 
 const finalCreateStore = compose(
   // Middleware you want to use in development:
-  applyMiddleware(logger, ircMiddleware, thunk),
+  applyMiddleware(logger, wsMiddleware, ircMiddleware, thunk),
   // Required! Enable Redux DevTools with the monitors you chose
   DevTools.instrument()
 )(createStore);

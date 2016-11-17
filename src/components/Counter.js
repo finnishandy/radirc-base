@@ -9,7 +9,7 @@ export default class Counter extends Component {
     this.props.actions.increment();
   }
 
-  handleDecrement() {
+  handleDecrement = () => {
     this.props.actions.decrement();
   }
 

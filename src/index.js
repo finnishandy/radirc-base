@@ -19,3 +19,5 @@ ReactDOM.render(
   <Root store={store} />,
   document.getElementById('root')
 );
+
+store.dispatch({type: 'CONNECT', url: 'ws://163.172.153.75:8080' });
